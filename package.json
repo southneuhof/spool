@@ -20,7 +20,8 @@
     "proof:print": "node tests/browser/verify.cjs",
     "proof:xlsx": "node tests/browser-xlsx/verify.cjs",
     "build": "node build.mjs",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "exceljs": "^4.4.0"
