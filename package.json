@@ -1,0 +1,58 @@
+{
+  "name": "@southneuhof/spool",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Browser PDF printing and XLSX exports with optional Vue bindings",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue/index.d.ts",
+      "import": "./dist/vue/index.js"
+    }
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "proof:serve": "vite --host 127.0.0.1 --port 5184",
+    "proof:print": "node tests/browser/verify.cjs",
+    "proof:xlsx": "node tests/browser-xlsx/verify.cjs",
+    "build": "node build.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.28.0",
+    "jsdom": "^20.0.3",
+    "typescript": "^6.0.2",
+    "vite": "^8.1.4",
+    "vitest": "^4.1.10",
+    "vue": "^3.5.39"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/southneuhof/spool.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "XLSX.md"
+  ]
+}
